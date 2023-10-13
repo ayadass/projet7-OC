@@ -5,7 +5,8 @@ import numpy as np
 # Charger le modèle
 model = pickle.load(open("model.pkl", "rb"))
 
-booster = model.named_steps['xgb_classifier'].get_booster()
+booster = pipeline.named_steps['classifier'].get_booster()
+
 feature_names = booster.feature_names
 
 
