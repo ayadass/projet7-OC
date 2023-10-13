@@ -5,8 +5,9 @@ import numpy as np
 # Charger le modèle
 model = pickle.load(open("model.pkl", "rb"))
 
-# Supposez que 'feature_names' est une liste contenant les noms de colonnes de votre modèle
-feature_names = model.get_booster().feature_names
+booster = model.named_steps['xgb_classifier'].get_booster()
+feature_names = booster.feature_names
+
 
 
 
