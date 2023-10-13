@@ -5,10 +5,16 @@ import numpy as np
 # Charger le modèle
 model = pickle.load(open("model.pkl", "rb"))
 
+# Supposez que 'feature_names' est une liste contenant les noms de colonnes de votre modèle
+feature_names = model.get_booster().feature_names
+
+
+
+
 # Générer des données de test où toutes les valeurs sont 1
 num_samples = 10  # Nombre d'échantillons à générer
 num_features = 261  # Nombre de variables dans votre nouveau modèle
-X_test = pd.DataFrame(np.ones((num_samples, num_features)))
+X_test = pd.DataFrame(np.ones((num_samples, num_features)), columns=feature_names)
 
 # Prédire avec le modèle
 y_pred = model.predict(X_test)
