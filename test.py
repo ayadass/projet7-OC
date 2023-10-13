@@ -2,6 +2,9 @@ import pickle
 import pandas as pd
 import numpy as np
 
+# Charger le modèle
+model = pickle.load(open("model.pkl", "rb"))
+
 # Générer des données de test où toutes les valeurs sont 1
 num_samples = 10  # Nombre d'échantillons à générer
 num_features = 262  # Nombre de variables dans votre nouveau modèle
