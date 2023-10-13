@@ -7,7 +7,7 @@ model = pickle.load(open("model.pkl", "rb"))
 
 # Générer des données de test où toutes les valeurs sont 1
 num_samples = 10  # Nombre d'échantillons à générer
-num_features = 262  # Nombre de variables dans votre nouveau modèle
+num_features = 261  # Nombre de variables dans votre nouveau modèle
 X_test = pd.DataFrame(np.ones((num_samples, num_features)))
 
 # Prédire avec le modèle
